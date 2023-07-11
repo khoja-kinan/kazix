@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 import classes from "./SoccerCardTime.module.css";
 
-const SoccerCardTime = () => {
+const SoccerCardTime = (props) => {
   return (
     <Stack
       direction={"row"}
@@ -11,7 +11,7 @@ const SoccerCardTime = () => {
       marginTop={1}
     >
       <Typography variant="caption" className={classes.time}>
-        Today, 21:30
+        {props.time}
       </Typography>
       <svg
         width="17"

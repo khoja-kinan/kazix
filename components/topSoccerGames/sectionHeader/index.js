@@ -11,11 +11,15 @@ const SectionHeader = () => {
       justifyContent={"space-between"}
       alignItems={"center"}
     >
-      <Typography variant="h5" fontWeight={700}>
+      <Typography variant="h6" fontWeight={700}>
         Top Soccer Games
       </Typography>
+
       <Stack direction={"row"} alignItems={"center"} spacing={2}>
-        <Button variant="contained" className={classes.NavigationButtons}>
+        <Button
+          variant="contained"
+          className={`${classes.NavigationButtons} ${classes.viewAllBtn}`}
+        >
           View All
         </Button>
 

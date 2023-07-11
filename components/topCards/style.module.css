@@ -5,7 +5,7 @@
   background-position: center;
   color: #fff !important;
   position: relative;
-  height: 200px;
+  height: 232px;
   border-radius: 16px;
 }
 .blur_filter {
@@ -31,9 +31,10 @@
 }
 .Cardnumbers {
   color: #fff;
-  font-weight: 700;
+  font-weight: bolder;
+  font-size: 1.3rem;
   border-radius: 8px;
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.9rem;
   background: rgba(5, 14, 30, 0.6);
 }
 
@@ -45,6 +46,6 @@
 
 .buttomNumbers {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }

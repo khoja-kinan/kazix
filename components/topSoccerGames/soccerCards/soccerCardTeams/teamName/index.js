@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const TeamName = (props) => {
+const TeamName = ({ team }) => {
   return (
     <Stack
       direction={"row"}
@@ -10,9 +10,9 @@ const TeamName = (props) => {
       alignItems={"flex-start"}
       justifyContent={"center"}
     >
-      <Image src={props.image} alt="team1" width={15} height={15} />
+      <Image src={team.teamFlag} alt="team1" width={15} height={15} />
       <Typography variant="subtitle2" className="wieght400 white-color">
-        Barracas Central
+        {team.teamName}
       </Typography>
     </Stack>
   );

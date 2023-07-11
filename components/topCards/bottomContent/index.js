@@ -4,7 +4,7 @@ import classes from "../style.module.css";
 
 const BottomContent = () => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
       {/* frist element */}
       <Grid item xs={4}>
         <Stack
@@ -40,7 +40,7 @@ const BottomContent = () => {
             component="p"
             className={classes.buttomNumbers}
           >
-            draw
+            Draw
           </Typography>{" "}
           <Typography
             variant="h6"

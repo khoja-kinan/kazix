@@ -2,13 +2,14 @@ import * as React from "react";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+
 export default function CustomBreadcrumbs() {
   const breadcrumbs = [
     <Link
       underline="none"
       key="1"
       color="#fff"
-      sx={{ display: "flex", alignItems: "center" }}
+      sx={{ display: "flex", alignItems: "center", fontSize: "0.9rem" }}
     >
       <svg
         style={{ marginRight: "0.5rem" }}
@@ -28,7 +29,7 @@ export default function CustomBreadcrumbs() {
       </svg>
       England
     </Link>,
-    <Link underline="none" key="2" color="#fff">
+    <Link underline="none" key="2" color="#fff" sx={{ fontSize: "0.9rem" }}>
       Premier League
     </Link>,
   ];

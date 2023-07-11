@@ -1,12 +1,24 @@
-.buttonsContainer {
+/* .buttonsContainer {
   border-radius: 99999px;
   background: #0b1b3d;
   padding: 0.3rem 0.5rem;
-}
+} */
 
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 99999px;
+  background: #0b1b3d;
+  padding: 0.3rem 0.5rem;
+  column-gap: 0.5rem;
+  overflow-x: visible;
+}
 .buttomNumbers {
+  text-transform: lowercase;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 .arrowButtonsContainer {
@@ -26,4 +38,14 @@
 .arrowButton {
   padding: 10px !important;
   cursor: pointer;
+}
+
+.buttonContainer:hover,
+.hovered {
+  background-color: #fbff20 !important;
+}
+
+.buttonContainer:hover .buttomNumbers,
+.hovered .buttomNumbers {
+  color: #000;
 }

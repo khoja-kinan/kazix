@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 import classes from "./soccerCardHeader.module.css";
 
-const SoccerCardHeader = () => {
+const SoccerCardHeader = ({ legaName }) => {
   return (
     <Stack
       direction={"row"}
@@ -40,7 +40,7 @@ const SoccerCardHeader = () => {
           </defs>
         </svg>
         <Typography variant="p" className={classes.legaName}>
-          Argentina - Liga Professional
+          {legaName}
         </Typography>
       </Stack>
       <svg

@@ -1,85 +1,84 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Button, Grid, Typography } from "@mui/material";
+import React, { useContext, useState } from "react";
 import classes from "./soccerCardButtons.module.css";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { SelectedContext } from "../../../../context/SelectedContext";
 
-const SoccerCardButtons = () => {
+const SoccerCardButtons = ({ item }) => {
+  const { setSelected } = useContext(SelectedContext);
+
+  const [isClicked, setIsClicked] = useState("");
+
   return (
     <Grid container spacing={1} wrap="wrap" alignItems={"center"}>
-      {/* frist element */}
-      <Grid item xs={3.5}>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          className={classes.buttonsContainer}
-        >
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1.05
-          </Typography>
-        </Stack>
-      </Grid>
-      {/* Second Element */}
-      <Grid item xs={3.5}>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          className={classes.buttonsContainer}
-        >
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1.05
-          </Typography>
-        </Stack>
-      </Grid>
-      {/* Third Element */}
-      <Grid item xs={3.5}>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          className={classes.buttonsContainer}
-        >
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
-            className={classes.buttomNumbers}
-          >
-            1.05
-          </Typography>
-        </Stack>
-      </Grid>
-      <Grid item xs={0.5}>
-        {/*  <KeyboardArrowDownIcon
-          className={`${classes.arrowButton} ${classes.NavigationButtons}`}
-        /> */}
+      {item.buttons.length > 0 &&
+        item.buttons.map((button, index) => (
+          <Grid key={index} item xs={3.5}>
+            <Button
+              className={`${classes.buttonContainer} ${
+                isClicked === button.id ? classes.hovered : ""
+              }`}
+              onClick={() => {
+                setIsClicked((prev) => (prev === button.id ? "" : button.id));
+                let selectedbtn = { ...item, buttons: button };
 
+                setSelected((prevData) => {
+                  const updatedData = [...prevData];
+                  const index = updatedData.findIndex(
+                    (itm) => itm.id === item.id
+                  );
+
+                  if (index !== -1) {
+                    if (updatedData[index].buttons === button) {
+                      updatedData.splice(index, 1);
+                    } else {
+                      updatedData[index] = {
+                        ...updatedData[index],
+                        buttons: button,
+                      };
+                    }
+                  } else {
+                    updatedData.push(selectedbtn);
+                  }
+
+                  return updatedData;
+                });
+              }}
+              // [...prev, (prev[id] = selectedbtn)]
+              disabled={button.min === null || button.top === null}
+            >
+              {button.min === null || button.top === null ? (
+                <Typography
+                  variant="caption"
+                  sx={{
+                    fontSize: "0.65rem",
+                    color: "#7E8DA9",
+                  }}
+                >
+                  Not Available
+                </Typography>
+              ) : (
+                <>
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.buttomNumbers}
+                  >
+                    {button.min}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.buttomNumbers}
+                  >
+                    {button.top}
+                  </Typography>
+                </>
+              )}
+            </Button>
+          </Grid>
+        ))}
+
+      <Grid item xs={0.5}>
         <svg
           width="30"
           height="30"
@@ -93,9 +92,9 @@ const SoccerCardButtons = () => {
               id="Icon"
               d="M4.33325 5.25L7.83325 8.75L11.3333 5.25"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         </svg>
