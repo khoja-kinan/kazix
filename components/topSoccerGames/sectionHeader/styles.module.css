@@ -1,0 +1,18 @@
+.NavigationButtons {
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #13316c;
+  border: 1.5px solid #0f2757;
+  padding: 12px 16px !important;
+}
+
+.arrowButton {
+  padding: 8px !important;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.NavigationButtons:hover {
+  background-color: #0f243a !important;
+}

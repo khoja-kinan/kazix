@@ -1,0 +1,29 @@
+.buttonsContainer {
+  border-radius: 99999px;
+  background: #0b1b3d;
+  padding: 0.3rem 0.5rem;
+}
+
+.buttomNumbers {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.arrowButtonsContainer {
+  border-radius: 99999px;
+  background: #0b1b3d;
+  position: relative;
+}
+
+.NavigationButtons {
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 99999px;
+  padding: 10px 5px;
+  background-color: #0b1b3d;
+}
+
+.arrowButton {
+  padding: 10px !important;
+  cursor: pointer;
+}
